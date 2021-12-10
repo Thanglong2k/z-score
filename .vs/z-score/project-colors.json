@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1c63ce59-6d22-4793-a8d4-9c6e1dd9c98d": {
+      "ProjectGuid": "1c63ce59-6d22-4793-a8d4-9c6e1dd9c98d",
+      "DisplayName": "z-score",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
