@@ -1,0 +1,15 @@
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\bin\Debug\net6.0\z-score.exe
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\bin\Debug\net6.0\z-score.deps.json
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\bin\Debug\net6.0\z-score.runtimeconfig.json
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\bin\Debug\net6.0\z-score.dll
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\bin\Debug\net6.0\ref\z-score.dll
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\bin\Debug\net6.0\z-score.pdb
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\obj\Debug\net6.0\z-score.csproj.AssemblyReference.cache
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\obj\Debug\net6.0\z-score.GeneratedMSBuildEditorConfig.editorconfig
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\obj\Debug\net6.0\z-score.AssemblyInfoInputs.cache
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\obj\Debug\net6.0\z-score.AssemblyInfo.cs
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\obj\Debug\net6.0\z-score.csproj.CoreCompileInputs.cache
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\obj\Debug\net6.0\z-score.dll
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\obj\Debug\net6.0\ref\z-score.dll
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\obj\Debug\net6.0\z-score.pdb
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\z-score\obj\Debug\net6.0\z-score.genruntimeconfig.cache
