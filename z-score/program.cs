@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Globalization;
+using System.Data;
+using ConsoleTables;
 
 namespace z_score
 {
     internal class program
     {
         static int soTP=2;
-        
+        static DataTable table;
         static void Main(string[] args)
         {
             Console.InputEncoding = Encoding.UTF8;
@@ -39,6 +41,9 @@ namespace z_score
             #endregion
             List<double> arrX = new List<double> { 9.1, 4.5, 5.3, 6.7, 6.5, 7.0, 6.0, 5.5, 7.0, 7.0, 8.5, 8.6 };
             List<double> arrY = new List<double> { 8.5, 5.5, 6.0, 7.5, 8.5, 6.0, 6.5, 6.8, 9.0, 7.2, 8.0, 8.5 };
+            table = new DataTable();
+            table.Columns.Add("value", typeof(double));
+            table.Columns.Add("z-score", typeof(double));
             double xTB = 0, dlcX = 0, yTB = 0, dlcY = 0;
             double k = 0;
             for(int i = 0; i < arrX.Count(); i++)
@@ -91,20 +96,32 @@ namespace z_score
         }
         private static void zscore(List<double> arr,double TB,double dlc)
         {
+            table.Clear();
             Console.WriteLine("\n-------------z-score: ----------------");
-            arr.ToList().ForEach(x => Console.WriteLine("Value " + Math.Round((x - TB) / dlc,soTP)));
+            arr.ToList().ForEach(x => {
+                //Console.WriteLine("Value =" + x + "---> z-score =" + Math.Round((x - TB) / dlc, soTP));
+                table.Rows.Add(x, Math.Round((x - TB) / dlc, soTP));
+            }
+            );
+            writeTable(table);
         }
         private static void zscore_ABS(List<double> arr,double TB, double dlc)
         {
+            table.Clear();
             Console.WriteLine("\n-------------z-score TBTTD: -------------");
             double total = 0;
             arr.ToList().ForEach(x => total += Math.Round(Math.Abs(x - TB),soTP));
             dlc = Math.Round((double)total / arr.Count(),soTP);
             Console.WriteLine("sA : " + dlc);
-            arr.ToList().ForEach(x => Console.WriteLine("Value " + Math.Round((x - TB) / dlc,soTP)));
+            arr.ToList().ForEach(x => {
+                //Console.WriteLine("Value =" + x + "---> z-score =" + Math.Round((x - TB) / dlc, soTP));
+                table.Rows.Add(x, Math.Round((x - TB) / dlc, soTP));
+            });
+            writeTable(table);
         }
         private static void zscore_MinMax(List<double> arr, double TB)
         {
+            table.Clear();
             Console.WriteLine("\n-------------min-max: -------------");
             Console.WriteLine("Nhập min: ");
             double new_min = double.Parse(Console.ReadLine());
@@ -112,15 +129,17 @@ namespace z_score
             double new_max = double.Parse(Console.ReadLine());
             double min = arr.Min();
             double max = arr.Max();
-            //Console.WriteLine("Value " + new_min);
-            for (int i = 0; i < arr.Count(); i++)
+            arr.ToList().ForEach(x =>
             {
-                Console.WriteLine("Value " + Math.Round((((arr[i] - min) / (max - min)) * (new_max - new_min)) + new_min,soTP));
+                //Console.WriteLine("Value =" + x + "---> z-score =" + Math.Round((((x - min) / (max - min)) * (new_max - new_min)) + new_min, soTP));
+                table.Rows.Add(x, Math.Round((((x - min) / (max - min)) * (new_max - new_min)) + new_min, soTP));
             }
-            //Console.WriteLine("Value " + new_max);
+            );
+            writeTable(table);
         }
         private static void zscore_Do10(List<double> arr, double TB)
         {
+            table.Clear();
             Console.WriteLine("\n-------------độ thập phân: -------------");
             List<double> arr_new = new List<double>();
             for (int i = 0; i < arr.Count(); i++)
@@ -140,7 +159,13 @@ namespace z_score
                 }
             }
             Console.WriteLine("j = " + j);
-            arr.ToList().ForEach(x => Console.WriteLine("Value " + Math.Round(x / Math.Pow(10, j),soTP)));
+            arr.ToList().ForEach(x =>
+            {
+                //Console.WriteLine("Value =" + x + "---> z-score =" + Math.Round(x / Math.Pow(10, j), soTP));
+                table.Rows.Add(x, Math.Round(x / Math.Pow(10, j), soTP));
+            }
+                );
+            writeTable(table);
         }
         private static void moiTuongQuan(List<double> arrX, List<double> arrY,double xTB, double yTB, double dlcX, double dlcY)
         {
@@ -161,7 +186,24 @@ namespace z_score
             else if(result==0) Console.WriteLine("------>Không có mối tương quan");
             else Console.WriteLine("------>Tương quan nghịch");
         }
+        private static void writeTable(DataTable data)
+        {
+            string[] columnNames = data.Columns.Cast<DataColumn>()
+                                 .Select(x => x.ColumnName)
+                                 .ToArray();
 
+            DataRow[] rows = data.Select();
+
+            var table = new ConsoleTable(columnNames);
+            foreach (DataRow row in rows)
+            {
+                table.AddRow(row.ItemArray);
+            }
+            table.Write(Format.MarkDown);
+            /*table.Write(Format.Alternative);
+            table.Write(Format.Minimal);
+            table.Write(Format.Default);*/
+        }
         
     }
 }
