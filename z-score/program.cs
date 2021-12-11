@@ -37,9 +37,15 @@ namespace z_score
             
             Console.ReadKey(); // stop screen*/
             #endregion
-            List<double> arrX = new List<double> { 4.5, 5.3, 5.5, 6.0, 6.5, 6.7, 7.0, 7.0, 7.0, 8.5, 8.6, 9.1 };
-            List<double> arrY = new List<double> { 5.5, 6.0, 6.0, 6.5, 6.8, 7.2, 7.5, 8.0, 8.5, 8.5, 8.5, 9.0 };
+            List<double> arrX = new List<double> { 9.1, 4.5, 5.3, 6.7, 6.5, 7.0, 6.0, 5.5, 7.0, 7.0, 8.5, 8.6 };
+            List<double> arrY = new List<double> { 8.5, 5.5, 6.0, 7.5, 8.5, 6.0, 6.5, 6.8, 9.0, 7.2, 8.0, 8.5 };
             double xTB = 0, dlcX = 0, yTB = 0, dlcY = 0;
+            double k = 0;
+            for(int i = 0; i < arrX.Count(); i++)
+            {
+                k += arrX[i] * arrY[i];
+            }
+            Console.WriteLine("k=:"+k);
             Console.WriteLine("===========TÍNH X============");
             trungBinh(arrX,ref xTB);
             doLechChuan(arrX,xTB,ref dlcX);
@@ -104,12 +110,14 @@ namespace z_score
             double new_min = double.Parse(Console.ReadLine());
             Console.WriteLine("Nhập max: ");
             double new_max = double.Parse(Console.ReadLine());
-            Console.WriteLine("Value " + new_min);
-            for (int i = 1; i < arr.Count() - 1; i++)
+            double min = arr.Min();
+            double max = arr.Max();
+            //Console.WriteLine("Value " + new_min);
+            for (int i = 0; i < arr.Count(); i++)
             {
-                Console.WriteLine("Value " + Math.Round((((arr[i] - arr[0]) / (arr[arr.Count() - 1] - arr[0])) * (new_max - new_min)) + new_min,soTP));
+                Console.WriteLine("Value " + Math.Round((((arr[i] - min) / (max - min)) * (new_max - new_min)) + new_min,soTP));
             }
-            Console.WriteLine("Value " + new_max);
+            //Console.WriteLine("Value " + new_max);
         }
         private static void zscore_Do10(List<double> arr, double TB)
         {
@@ -150,6 +158,8 @@ namespace z_score
             double result = Math.Round((total - nXY) / ndlcXY,soTP);
             Console.Write("Tương quan rXY: " + result);
             if(result>0) Console.WriteLine("------>Tương quan thuận");
+            else if(result==0) Console.WriteLine("------>Không có mối tương quan");
+            else Console.WriteLine("------>Tương quan nghịch");
         }
 
         

@@ -1,0 +1,15 @@
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\bin\Debug\net6.0\ConvertSpace.exe
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\bin\Debug\net6.0\ConvertSpace.deps.json
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\bin\Debug\net6.0\ConvertSpace.runtimeconfig.json
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\bin\Debug\net6.0\ConvertSpace.dll
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\bin\Debug\net6.0\ref\ConvertSpace.dll
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\bin\Debug\net6.0\ConvertSpace.pdb
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\obj\Debug\net6.0\ConvertSpace.csproj.AssemblyReference.cache
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\obj\Debug\net6.0\ConvertSpace.GeneratedMSBuildEditorConfig.editorconfig
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\obj\Debug\net6.0\ConvertSpace.AssemblyInfoInputs.cache
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\obj\Debug\net6.0\ConvertSpace.AssemblyInfo.cs
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\obj\Debug\net6.0\ConvertSpace.csproj.CoreCompileInputs.cache
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\obj\Debug\net6.0\ConvertSpace.dll
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\obj\Debug\net6.0\ref\ConvertSpace.dll
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\obj\Debug\net6.0\ConvertSpace.pdb
+E:\Nam4\Ki1\KhaiPhaDuLieu\z-score\ConvertSpace\obj\Debug\net6.0\ConvertSpace.genruntimeconfig.cache
